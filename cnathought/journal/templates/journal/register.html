@@ -1,1 +1,35 @@
-<h1>Register</h1>
+{% load static %} {% load crispy_forms_tags %}
+
+<html>
+  <head>
+    <title>CnaTought | Register</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://bootswatch.com/5/morph/bootstrap.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="{% static "css/styles.css" %}"
+    />
+  </head>
+
+  <br />
+  <div class="container bg-white shadow-md p-5 form-layout">
+    <h3>Create your acount</h3>
+
+    <h5>Share your thought</h5>
+    <br />
+    <br />
+
+    <form method="POST" autocomplete="off">
+      {% csrf_token %} {{RegistrationForm|crispy}}
+      <br />
+      <button
+        class="btn btn-secondary btn-lg w-100 btn-block p-3"
+        type="submit"
+      >
+        Create account
+      </button>
+    </form>
+  </div>
+  <br />
+</html>
